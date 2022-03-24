@@ -27,8 +27,15 @@
             placeholder="Digite seu e-mail"
             formControlName="email"
           />
-          <small id="helpId" class="form-text text-danger"
-            ><b>* Help text</b></small
+          <small
+            id="helpId"
+            class="form-text text-danger"
+            *ngIf="
+              (loginForm.get('email')?.hasError('required') ||
+                loginForm.get('email')?.hasError('email')) &&
+              loginForm.controls['email']?.touched
+            "
+            ><b>* Favor digitar um e-mail válido!</b></small
           >
         </div>
         <label for="">Login*</label>
@@ -39,15 +46,24 @@
           placeholder="Digite sua senha"
           formControlName="password"
         />
-        <small id="helpId" class="form-text text-danger"
-          ><b>* Help text</b></small
+        <small
+          id="helpId"
+          class="form-text text-danger"
+          *ngIf="
+            loginForm.get('password')?.hasError('required') &&
+            loginForm.controls['password']?.touched
+          "
+          ><b>* Campo senha obrigatório!</b></small
         >
         <br />
-        <button type="button" class="btn btn-default btn-lg btn-block mb-4" (click)="login()">
+        <button
+          type="button"
+          class="btn btn-default btn-lg btn-block mb-4"
+          (click)="login()"
+        >
           ENTRAR
         </button>
       </form>
     </div>
   </div>
 </div>
-
