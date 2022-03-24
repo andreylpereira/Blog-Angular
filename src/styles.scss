@@ -3,9 +3,14 @@
 
 html, body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   background-color: #0000;
   height: 100%;
 }
 
 body { margin: 0; font-family: 'Montserrat', "Helvetica Neue", sans-serif; }
+.btn {
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px
+}

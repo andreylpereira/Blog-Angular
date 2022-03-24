@@ -1,0 +1,31 @@
+html {
+  background-color: #131313;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+
+}
+
+#user-icon {
+  fill: #5c157e
+}
+
+@media (min-width: 576px) {
+
+  .card {
+    max-width: 25%
+  }
+}
+
+@media (max-width: 575px) {
+
+  .card {
+    max-width: 95%
+  }
+}
