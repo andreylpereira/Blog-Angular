@@ -112,8 +112,12 @@
         />
       </svg>
     </div>
-    <div *ngIf="!isLoggedIn === false">
-      <a class="nav-item" (click)="logOut()">Sair</a>
+    <div *ngIf="!isLoggedIn === false" class="row">
+      <div class="col user">
+        <p class="m-0">Seja bem-vindo,</p>
+        <p class="m-0">{{ user }}</p>
+      </div>
+      <a class="nav-item mr-4" (click)="logOut()">Sair</a>
     </div>
   </div>
 </nav>

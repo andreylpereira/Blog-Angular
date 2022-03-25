@@ -6,6 +6,7 @@ import { AuthGuardService as AuthGuard } from '../../services/auth-guard/auth-gu
 import { ControlPanelComponent } from 'src/app/pages/control-panel/control-panel.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {

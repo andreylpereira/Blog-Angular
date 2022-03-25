@@ -5,13 +5,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { AboutComponent } from 'src/app/pages/about/about.component';
-
+import { RegisterComponent } from 'src/app/pages/control-panel/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'admin/login', component: LoginComponent },
+  {
+    path: 'admin/register',
+    component: RegisterComponent,
+  },
   {
     path: 'admin',
     loadChildren: () =>

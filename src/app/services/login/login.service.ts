@@ -39,7 +39,7 @@ export class LoginService {
           timeOut: 2000,
         });
       },
-      error: (err) => {
+      error: (err: any) => {
         this.toastr.error(err.error.message, err.error.title, {
           timeOut: 2000,
         });

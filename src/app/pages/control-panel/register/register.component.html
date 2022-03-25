@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="card mt-5 container-fluid p-0 shadow">
+  <div class="card-body">
+    <h1 class="card-title mt-0"><b>Cadastro de usuário</b></h1>
+    <div class="card-text">
+
+
+      <div>
+        <form [formGroup]="registerForm">
+          <div class="form-group">
+            <label for="email">E-mail*</label>
+            <input
+              type="email"
+              class="form-control"
+              aria-describedby="helpId"
+              type="text"
+              formControlName="email"
+              placeholder="Digite seu email"
+            />
+            <small class="form-text text-danger" *ngIf="(registerForm.get('email')?.hasError('required') || registerForm.get('email')?.hasError('email')) && registerForm.controls['email']?.touched"><b>* Favor digitar um e-mail válido!</b></small>
+            <br />
+            <label for="password">Nome*</label>
+            <input
+              type="text"
+              class="form-control"
+              aria-describedby="helpId"
+              formControlName="firstName"
+              placeholder="Digite sua senha"
+            />
+            <small class="form-text text-danger" *ngIf="registerForm.get('firstName')?.hasError('required') && registerForm.controls['firstName']?.touched"><b>* Favor digitar o seu nome!</b></small>
+            <br>
+            <label for="email">Sobrenome*</label>
+            <input
+              type="text"
+              class="form-control"
+              aria-describedby="helpId"
+              type="text"
+              formControlName="lastName"
+              placeholder="Digite seu sobrenome"
+            />
+            <small class="form-text text-danger" *ngIf="registerForm.get('lastName')?.hasError('required') && registerForm.controls['lastName']?.touched"><b>* Favor digitar o seu sobrenome!</b></small>
+            <br />
+            <label for="password">Senha*</label>
+            <input
+              type="password"
+              class="form-control"
+              aria-describedby="helpId"
+              formControlName="password"
+              placeholder="Digite sua senha"
+            />
+            <small class="form-text text-danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.controls['password']?.touched"><b>* Campo senha obrigatório!</b></small>
+          </div>
+        </form>
+        <button
+          type="button"
+          class="btn btn-default btn-lg btn-block mb-4 mt-4 shadow"
+          (click)="register()"
+        >
+          CADASTRAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

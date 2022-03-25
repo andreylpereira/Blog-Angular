@@ -26,5 +26,6 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.get('password')?.value,
     };
     this.loginService.login(user);
+    this.loginForm.reset();
   }
 }

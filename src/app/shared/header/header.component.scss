@@ -55,3 +55,15 @@ a {
   cursor: pointer;
   fill: $primary-color !important;
 }
+
+.user {
+  color: $primary-color;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+@media (max-width: 601px) {
+  .user {
+    display: none;
+  }
+}

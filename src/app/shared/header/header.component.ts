@@ -10,15 +10,21 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class HeaderComponent implements OnInit {
   public isLoggedIn: boolean = false;
+  public user: string = '';
 
   constructor(
     private loginService: LoginService,
-    private authGuardService: AuthGuardService
+    private authGuardService: AuthGuardService,
   ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.authGuardService.isAuthenticated();
+
+    let getUser = this.loginService.getUser();
+    this.user = `${getUser.firstName} ${getUser.lastName}`;
   }
+
+
 
   logOut() {
     this.loginService.logOut();
