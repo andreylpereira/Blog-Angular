@@ -1,0 +1,13 @@
+@media (min-width: 576px) {
+
+  .card {
+    max-width: 75%
+  }
+}
+
+@media (max-width: 575px) {
+
+  .card {
+    max-width: 95%
+  }
+}

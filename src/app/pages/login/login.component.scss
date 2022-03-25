@@ -1,6 +1,4 @@
-html {
-  background-color: #131313;
-}
+@import '../../../assets/scss/variables.scss';
 
 .main {
   width: 100vw;
@@ -9,22 +7,24 @@ html {
   align-items: center;
   padding: 0 !important;
   margin: 0 !important;
+}
 
+.btn {
+  background-color: $tertiary-color;
+  color: $primary-color;
 }
 
 #user-icon {
-  fill: #5c157e
+  fill: $tertiary-color;
 }
 
 @media (min-width: 576px) {
-
   .card {
     max-width: 25%
   }
 }
 
 @media (max-width: 575px) {
-
   .card {
     max-width: 95%
   }

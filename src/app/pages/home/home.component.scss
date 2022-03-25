@@ -1,0 +1,50 @@
+@media (min-width: 576px) {
+
+  .card {
+    max-width: 100%
+  }
+
+  .articles {
+     max-width: 80% !important;
+     margin-left: 30px;
+  }
+
+  .categories {
+     max-width: 20% !important;
+     margin-right: 30px;
+
+     .card-text {
+       font-size: 9px;
+       font-weight: 500;
+       cursor: pointer;
+       i:hover {
+         text-decoration: underline;
+       }
+     }
+  }
+}
+
+@media (max-width: 800px) {
+
+  .card {
+    max-width: 95%
+  }
+
+  .articles {
+    max-width: 100% !important;
+    margin: 0;
+  }
+
+  .categories {
+    display: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+ul {
+  margin: 0 !important;
+}
+li {
+  list-style: none;
+}

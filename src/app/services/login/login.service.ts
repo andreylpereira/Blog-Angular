@@ -32,20 +32,18 @@ export class LoginService {
 
   login(user: Login) {
     return this.http.post<Login>(this.url, user).subscribe({
-      next: (data) => {
-        localStorage.setItem('currentUser', JSON.stringify(data));
-        this.toastr.success('Login efetuado com sucesso.', 'Sucesso!', {
+      next: (res: any) => {
+        localStorage.setItem('currentUser', JSON.stringify(res));
+        this.router.navigate(['/home']);
+        this.toastr.success(res.message, res.title, {
           timeOut: 2000,
         });
-        this.router.navigate(['/']);
       },
-      error: (err) =>
-        {
-          console.log(err);
-          this.toastr.error('Não foi possível logar no servidor!', 'Error!', {
-            timeOut: 2000,
-          })
-        }
+      error: (err) => {
+        this.toastr.error(err.error.message, err.error.title, {
+          timeOut: 2000,
+        });
+      },
     });
   }
 
@@ -54,7 +52,7 @@ export class LoginService {
     this.toastr.success('Logout efetuado com sucesso.', 'Sucesso!', {
       timeOut: 2000,
     });
-    this.router.navigate(['/home']);
+    this.router.navigate(['/logout']);
   }
 
   getUser() {

@@ -1,11 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from 'src/app/pages/login/login.component';
 
-const routes: Routes = [ { path: 'admin/login', component: LoginComponent } ];
+/* Components */
+import { HomeComponent } from 'src/app/pages/home/home.component';
+import { LoginComponent } from 'src/app/pages/login/login.component';
+import { AboutComponent } from 'src/app/pages/about/about.component';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'admin/login', component: LoginComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./pages/control-panel/control-panel.module').then(
+        (a) => a.ControlPanelModule
+      ),
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
