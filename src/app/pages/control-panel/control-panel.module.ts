@@ -6,9 +6,11 @@ import { ControlPanelComponent } from './control-panel.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListArticlesComponent } from './list-articles/list-articles.component';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
 
 @NgModule({
-  declarations: [ControlPanelComponent, RegisterComponent],
+  declarations: [ControlPanelComponent, RegisterComponent, ListArticlesComponent, ListCategoriesComponent],
   imports: [
     CommonModule,
     ControlPanelRoutingModule,
