@@ -67,3 +67,9 @@ a {
     display: none;
   }
 }
+
+@media (min-width: 571px) {
+  .logout {
+    margin-right: 15px;
+  }
+}
