@@ -8,6 +8,7 @@ import { PagesModule } from 'src/app/pages/pages.module';
 import { ControlPanelRoutingModule } from './pages/control-panel/control-panel-routing';
 import { AppComponent } from './app.component';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,13 +17,9 @@ import { AppComponent } from './app.component';
     ControlPanelRoutingModule,
     PagesModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'pt',
-    },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
   ],

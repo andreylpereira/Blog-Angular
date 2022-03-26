@@ -1,6 +1,29 @@
 <div class="card shadow">
   <div class="card-body">
     <h1 class="card-title mt-0"><b>Categorias</b></h1>
-    <p class="card-text">Text</p>
+    <div class="card-text">
+      <div *ngIf="categories | async as category">
+        <div
+          *ngFor="
+            let c of category
+              | paginate
+                : { id: 'categoryPagination', itemsPerPage: 5, currentPage: c }
+          "
+        >
+          <p>{{ c.title }}</p>
+        </div>
+        <pagination-controls
+          id="categoryPagination"
+          class="w-100"
+          (pageChange)="c = $event"
+          previousLabel="Anterior"
+          nextLabel="Proxima"
+          screenReaderPaginationLabel="Pagination"
+          screenReaderPageLabel="page"
+        >
+          ></pagination-controls
+        >
+      </div>
+    </div>
   </div>
 </div>
