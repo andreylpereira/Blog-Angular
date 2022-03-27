@@ -10,7 +10,7 @@ import User from 'src/app/models/user.model';
 })
 export class RegisterService {
 readonly url;
-  constructor(private http: HttpClient,  private router: Router,
+  constructor(private http: HttpClient, private router: Router,
     private toastr: ToastrService) {
     this.url = 'http://localhost:8080/admin/create'
   }

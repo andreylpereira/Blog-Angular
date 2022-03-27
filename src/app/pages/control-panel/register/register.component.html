@@ -19,7 +19,7 @@
             />
             <small class="form-text text-danger" *ngIf="(registerForm.get('email')?.hasError('required') || registerForm.get('email')?.hasError('email')) && registerForm.controls['email']?.touched"><b>* Favor digitar um e-mail válido!</b></small>
             <br />
-            <label for="password">Nome*</label>
+            <label for="firstName">Nome*</label>
             <input
               type="text"
               class="form-control"
@@ -29,7 +29,7 @@
             />
             <small class="form-text text-danger" *ngIf="registerForm.get('firstName')?.hasError('required') && registerForm.controls['firstName']?.touched"><b>* Favor digitar o seu nome!</b></small>
             <br>
-            <label for="email">Sobrenome*</label>
+            <label for="lastName">Sobrenome*</label>
             <input
               type="text"
               class="form-control"

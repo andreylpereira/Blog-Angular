@@ -1,1 +1,43 @@
-<p>form-categories works!</p>
+<app-header></app-header>
+<div class="card mt-5 container-fluid p-0 shadow">
+  <div class="card-body">
+    <h1 class="card-title mt-0"><b>Categoria</b></h1>
+    <div class="card-text">
+
+
+      <div>
+        <form [formGroup]="categoryForm">
+          <div class="form-group">
+            <label for="title">Título*</label>
+            <input
+              type="title"
+              class="form-control"
+              aria-describedby="helpId"
+              type="text"
+              formControlName="title"
+              placeholder="Digite o título para a categoria"
+            />
+            <small class="form-text text-danger" *ngIf="(categoryForm.get('title')?.hasError('required') || categoryForm.get('title')?.hasError('minlength')) && categoryForm.controls['title']?.touched"><b>* Favor digitar um título válido!</b></small>
+            <br />
+          </div>
+        </form>
+        <button
+        *ngIf="_route === '/admin/control-panel/categories/new'"
+          type="button"
+          class="btn btn-default btn-lg btn-block mb-4 mt-4 shadow"
+          (click)="createCategory()"
+        >
+          CADASTRAR
+        </button>
+        <button
+        *ngIf="_route !== '/admin/control-panel/categories/new'"
+        type="button"
+        class="btn btn-default btn-lg btn-block mb-4 mt-4 shadow"
+        (click)="updateCategory()"
+      >
+        SALVAR
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-default btn-lg mb-4 mt-4 shadow">
+<button type="button" class="btn btn-default btn-lg mb-4 mt-4 shadow" (click)="goCreateCategory()">
   NOVA CATEGORIA
 </button>
 <div class="card shadow">
@@ -16,7 +16,7 @@
           <div class="mb-1">
             {{ c.title }}
             <div class="row float-right icons">
-              <div class="pr-2">
+              <div class="pr-2" (click)="goEditCategory(c.id)">
                 <svg
                   width="17"
                   height="16"
@@ -31,7 +31,7 @@
                   />
                 </svg>
               </div>
-              <div class="pr-4">
+              <div class="pr-4" (click)="deleteCategory(c.id)">
                 <svg
                   width="18"
                   height="20"
@@ -49,6 +49,7 @@
             </div>
           </div>
         </div>
+        <br>
         <pagination-controls
           id="categoryPagination"
           class="w-100"

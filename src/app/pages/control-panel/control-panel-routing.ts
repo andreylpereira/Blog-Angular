@@ -5,7 +5,8 @@ import { AuthGuardService as AuthGuard } from '../../services/auth-guard/auth-gu
 /* Components */
 import { ControlPanelComponent } from 'src/app/pages/control-panel/control-panel.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-
+import { FormCategoriesComponent } from 'src/app/pages/control-panel/categories/form-categories/form-categories.component';
+import { FormArticlesComponent } from 'src/app/pages/control-panel/articles/form-articles/form-articles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,6 +14,36 @@ const routes: Routes = [
     path: 'control-panel',
     component: ControlPanelComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'control-panel/categories',
+    children: [
+      {
+        path: 'new',
+        component: FormCategoriesComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: ':id/edit',
+        component: FormCategoriesComponent,
+        canActivate: [AuthGuard],
+      },
+    ],
+  },
+  {
+    path: 'articles',
+    children: [
+      {
+        path: 'new',
+        component: FormArticlesComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: ':id/edit',
+        component: FormArticlesComponent,
+        canActivate: [AuthGuard],
+      },
+    ],
   },
   { path: '**', component: HomeComponent },
 ];

@@ -30,4 +30,5 @@ export class ControlPanelComponent implements OnInit {
   getArticles() {
     this.articles$ = this.articlesService.getArticles();
   }
+
 }
