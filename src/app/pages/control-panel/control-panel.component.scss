@@ -9,10 +9,10 @@
 }
 
 @media (max-width: 700px) {
-  .categories {
-    width: 100%;
+  .categories,.articles {
+    width: 100% !important;
   }
-  .articles {
-    width: 100%;
-  }
+
 }
+
+

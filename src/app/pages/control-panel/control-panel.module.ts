@@ -6,12 +6,14 @@ import { ControlPanelComponent } from './control-panel.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ListArticlesComponent } from './list-articles/list-articles.component';
-import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import { ListArticlesComponent } from './articles/list-articles/list-articles.component';
+import { ListCategoriesComponent } from './categories/list-categories/list-categories.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormCategoriesComponent } from './categories/form-categories/form-categories.component';
+import { FormArticlesComponent } from './articles/form-articles/form-articles.component';
 
 @NgModule({
-  declarations: [ControlPanelComponent, RegisterComponent, ListArticlesComponent, ListCategoriesComponent],
+  declarations: [ControlPanelComponent, RegisterComponent, ListArticlesComponent, ListCategoriesComponent, FormCategoriesComponent, FormArticlesComponent],
   imports: [
     CommonModule,
     ControlPanelRoutingModule,

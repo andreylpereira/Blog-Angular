@@ -8,10 +8,13 @@ import { ControlPanelModule } from 'src/app/pages/control-panel/control-panel.mo
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { CategoriesComponent } from './home/categories/categories.component';
+import { ArticlesComponent } from './home/articles/articles.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, AboutComponent],
+  declarations: [LoginComponent, HomeComponent, AboutComponent, CategoriesComponent, ArticlesComponent],
   exports: [LoginComponent],
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, SharedModule, ControlPanelModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, SharedModule, ControlPanelModule, NgxPaginationModule]
 })
 export class PagesModule {}

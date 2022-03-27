@@ -1,6 +1,14 @@
 <app-header></app-header>
+<div class="mr-3 ml-3">
+  <div class="card row w-100 p-0 m-0 mt-5 container-fluid shadow-sm">
+    <div class="card-body">
+      <h1 class="card-title mt-0"><b>Seja bem-vindo!</b></h1>
+      <h5 class="card-text">Seja bem-vindo ao painel de controle do blog, aqui você poderá criar, editar e excluir artigos e categorias.</h5>
+    </div>
+</div>
+</div>
 <div class="row m-0 container-fluid wrapper">
-  <app-list-articles class="articles mt-5" [articles]="articles$"></app-list-articles>
-  <app-list-categories class="categories mt-5" [categories]="categories$"></app-list-categories>
+  <app-list-articles class="articles mt-4" [articles]="articles$"></app-list-articles>
+  <app-list-categories class="categories mt-4" [categories]="categories$"></app-list-categories>
 </div>
 

@@ -1,19 +1,21 @@
 <div class="card shadow">
   <div class="card-body">
-    <h1 class="card-title mt-0"><b>Artigos</b></h1>
+    <h5 class="card-title mt-0"><b>Categorias</b></h5>
     <div class="card-text">
-      <div *ngIf="articles | async as article">
+      <div *ngIf="categories | async as category">
         <div
           *ngFor="
-            let a of article | paginate: { id: 'articlePagination', itemsPerPage: 5, currentPage: a }
+            let c of category
+              | paginate
+                : { id: 'categoryPagination', itemsPerPage: 10, currentPage: c }
           "
         >
-          <p>{{ a.title }}</p>
+          <p class="m-1">{{ c.title }}</p>
         </div>
         <pagination-controls
-        id="articlePagination"
+          id="categoryPagination"
           class="w-100"
-          (pageChange)="a = $event"
+          (pageChange)="c = $event"
           previousLabel="Anterior"
           nextLabel="Proxima"
           screenReaderPaginationLabel="Pagination"
