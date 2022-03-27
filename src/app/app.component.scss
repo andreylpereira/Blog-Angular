@@ -1,0 +1,5 @@
+@import '../assets/scss/variables.scss';
+
+::ng-deep .current {
+  background: $tertiary-color !important;
+}

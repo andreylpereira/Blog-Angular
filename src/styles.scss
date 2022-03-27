@@ -1,11 +1,22 @@
 
 @import '~normalize.css';
+@import './assets/scss/variables.scss';
 
 html, body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  background-color: #0000;
+  font-size: 13px;
+  background-color: $bg-primary;
   height: 100%;
 }
 
 body { margin: 0; font-family: 'Montserrat', "Helvetica Neue", sans-serif; }
+
+
+.btn {
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 15px
+}
+
+
+

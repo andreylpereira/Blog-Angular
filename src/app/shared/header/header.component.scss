@@ -1,0 +1,75 @@
+@import "../../../assets/scss/variables.scss";
+
+nav {
+  background-color: $tertiary-color !important;
+}
+
+#logo-body {
+  fill: $tertiary-color !important;
+}
+
+#logo-body {
+  fill: $primary-color !important;
+}
+
+#logo-letter {
+  fill: $tertiary-color !important;
+}
+
+a {
+  color: $primary-color !important;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: $primary-color !important;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.logout {
+  color: #fff !important;
+}
+
+.router-link-active {
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+.fill {
+  cursor: pointer;
+  fill: $primary-color !important;
+}
+
+.user {
+  color: $primary-color;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+@media (max-width: 630px) {
+  .user {
+    display: none;
+  }
+}
+
+@media (min-width: 571px) {
+  .logout {
+    margin-right: 15px;
+  }
+}

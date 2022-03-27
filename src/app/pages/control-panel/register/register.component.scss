@@ -1,0 +1,21 @@
+@import '../../../../assets/scss/variables.scss';
+
+
+@media (min-width: 576px) {
+
+  .card {
+    max-width: 50%
+  }
+}
+
+@media (max-width: 575px) {
+
+  .card {
+    max-width: 95%
+  }
+}
+
+.btn {
+  background-color: $tertiary-color;
+  color: $primary-color;
+}

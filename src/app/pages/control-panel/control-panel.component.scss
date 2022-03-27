@@ -1,0 +1,18 @@
+@media (min-width: 700px) {
+  .categories {
+    width: 30%;
+    padding-left: 15px;
+  }
+  .articles {
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .categories,.articles {
+    width: 100% !important;
+  }
+
+}
+
+
