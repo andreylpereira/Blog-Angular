@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { LoginService } from 'src/app/services/login/login.service';
 import Category from '../../models/category.model';
 
@@ -12,7 +12,6 @@ import Category from '../../models/category.model';
 export class CategoriesService {
   readonly url;
   private options: any;
-
 
   constructor(
     private http: HttpClient,
@@ -47,7 +46,7 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        },
+        }
       });
   }
 
@@ -69,7 +68,7 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        },
+        }
       });
   }
 
@@ -86,7 +85,7 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        },
+        }
       });
   }
 }

@@ -43,7 +43,7 @@ export class LoginService {
         this.toastr.error(err.error.message, err.error.title, {
           timeOut: 2000,
         });
-      },
+      }
     });
   }
 

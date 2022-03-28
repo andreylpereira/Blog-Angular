@@ -56,6 +56,11 @@ a {
   fill: $primary-color !important;
 }
 
+#theme {
+  cursor: pointer;
+  fill: white;
+}
+
 .user {
   color: $primary-color;
   font-weight: 500;
