@@ -24,7 +24,7 @@ export class ListCategoriesComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goEditCategory(_id: any) {
+  goUpdateCategory(_id: any) {
     this.router.navigate([`admin/control-panel/categories/${_id}/edit`]);
   }
 

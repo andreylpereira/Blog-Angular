@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-default btn-lg mb-4 mt-4 shadow">
+<button type="button" class="btn btn-default btn-lg mb-4 mt-4 shadow" (click)="goCreateArticle()">
   NOVO ARTIGO
 </button>
 <div class="card shadow">
@@ -33,7 +33,7 @@
                   />
                 </svg>
               </div> -->
-              <div class="pr-2">
+              <div class="pr-2" (click)="goUpdateArticle(a.id)">
                 <svg
                   width="17"
                   height="16"
@@ -48,7 +48,7 @@
                   />
                 </svg>
               </div>
-              <div class="pr-4">
+              <div class="pr-4" (click)="deleteArticle(a.id)">
                 <svg
                   width="18"
                   height="20"

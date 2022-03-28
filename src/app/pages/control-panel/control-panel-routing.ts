@@ -31,7 +31,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'articles',
+    path: 'control-panel/articles',
     children: [
       {
         path: 'new',
