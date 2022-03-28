@@ -11,13 +11,17 @@ import { ListCategoriesComponent } from './categories/list-categories/list-categ
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormCategoriesComponent } from './categories/form-categories/form-categories.component';
 import { FormArticlesComponent } from './articles/form-articles/form-articles.component';
+/* Editor */
+import { EditorModule } from '@tinymce/tinymce-angular';
+/* Pipe */
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe'
 
 @NgModule({
-  declarations: [ControlPanelComponent, RegisterComponent, ListArticlesComponent, ListCategoriesComponent, FormCategoriesComponent, FormArticlesComponent],
+  declarations: [ControlPanelComponent, RegisterComponent, ListArticlesComponent, ListCategoriesComponent, FormCategoriesComponent, FormArticlesComponent,SafeHtmlPipe ],
   imports: [
     CommonModule,
     ControlPanelRoutingModule,
-    ReactiveFormsModule, HttpClientModule, SharedModule, NgxPaginationModule
+    ReactiveFormsModule, HttpClientModule, SharedModule, NgxPaginationModule, EditorModule
   ]
 })
 export class ControlPanelModule { }

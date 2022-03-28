@@ -1,1 +1,94 @@
-<p>form-articles works!</p>
+<app-header></app-header>
+<div class="card mt-5 container-fluid p-0 shadow">
+  <div class="card-body">
+    <h1 class="card-title mt-0"><b>Artigo</b></h1>
+    <div class="card-text">
+      <div>
+        <form [formGroup]="articleForm">
+          <div class="form-group mb-0">
+            <label for="title">Título*</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="title"
+              aria-describedby="helpId"
+              placeholder="Digite o título do artigo"
+            />
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                articleForm.get('title')?.hasError('required') &&
+                articleForm.controls['title']?.touched
+              "
+              ><b>* Favor Favor digitar o título do artigo!</b></small
+            >
+          </div>
+          <br />
+          <label for="text">Texto*</label>
+          <editor
+            initialValue="Escreva seu artigo aqui."
+            apiKey="51ltykau1m4rzm79j9kefwxyat167fwatnpx3loleiewq8jz"
+            formControlName="body"
+            [init]="{
+              height: 300,
+              menubar: true,
+              plugins: [
+                'print searchreplace autolink directionality visualblocks visualchars image imagetools link media codesample table charmap hr pagebreak nonbreaking advlist lists textcolor wordcount contextmenu colorpicker textpattern emoticons'
+              ],
+              toolbar:
+                'formatselect | fontsizeselect | fontselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat emoticons'
+            }"
+          >
+          </editor>
+          <small
+            class="form-text text-danger"
+            *ngIf="
+              articleForm.get('body')?.hasError('required') &&
+              articleForm.controls['body']?.touched
+            "
+            ><b>* Favor escreva seu artigo!!</b></small
+          >
+          <br />
+          <label for="category">Categoria*</label>
+          <div class="form-group" *ngIf="categories$ | async as category">
+            <select
+              class="form-control"
+              formControlName="category"
+              placeholder="Selecione uma categoria"
+            >
+              <option *ngFor="let c of category" value="{{ c.id }}">
+                {{ c.title }}
+              </option>
+            </select>
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                articleForm.get('category')?.hasError('required') &&
+                articleForm.controls['category']?.touched
+              "
+              ><b>* Favor selecionar uma categoria para o artigo!</b></small
+            >
+            <br />
+          </div>
+        </form>
+        <button
+          *ngIf="_route === '/admin/control-panel/articles/new'"
+          type="button"
+          class="btn btn-default btn-lg btn-block mb-4 mt-4 shadow"
+          (click)="createArticle()"
+        >
+          PUBLICAR
+        </button>
+        <button
+          *ngIf="_route !== '/admin/control-panel/articles/new'"
+          type="button"
+          class="btn btn-default btn-lg btn-block mb-4 mt-4 shadow"
+          (click)="updateArticle()"
+        >
+          SALVAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br />

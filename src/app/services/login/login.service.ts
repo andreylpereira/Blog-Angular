@@ -43,7 +43,7 @@ export class LoginService {
         this.toastr.error(err.error.message, err.error.title, {
           timeOut: 2000,
         });
-      },
+      }
     });
   }
 
@@ -58,10 +58,14 @@ export class LoginService {
   getUser() {
     const session: any = localStorage.getItem('currentUser');
     const data = JSON.parse(session);
-    this.user.id = data.id;
-    this.user.firstName = data.firstName;
-    this.user.lastName = data.lastName;
-    return this.user;
+    if (data !== null) {
+      this.user.id = data.id;
+      this.user.firstName = data.firstName;
+      this.user.lastName = data.lastName;
+      return this.user;
+    } else {
+      return false;
+    }
   }
 
   options() {
@@ -86,4 +90,6 @@ export class LoginService {
       return false;
     }
   }
+
+
 }

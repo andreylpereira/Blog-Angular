@@ -5,6 +5,7 @@ import Category from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 import { Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-list-categories',
   templateUrl: './list-categories.component.html',
@@ -16,12 +17,14 @@ export class ListCategoriesComponent implements OnInit {
   constructor(
     private router: Router,
     private categoriesService: CategoriesService
-  ) {}
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+  }
   @Output() updateCategory = new EventEmitter<number>();
 
   ngOnInit(): void {}
 
-  goEditCategory(_id: any) {
+  goUpdateCategory(_id: any) {
     this.router.navigate([`admin/control-panel/categories/${_id}/edit`]);
   }
 
@@ -30,6 +33,8 @@ export class ListCategoriesComponent implements OnInit {
   }
 
   deleteCategory(_id: any) {
-    console.log(_id);
+    this.categoriesService.deleteCategory(_id);
+    location.reload();
   }
+
 }

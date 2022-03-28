@@ -14,17 +14,17 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private authGuardService: AuthGuardService,
+    private authGuardService: AuthGuardService
   ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.authGuardService.isAuthenticated();
 
     let getUser = this.loginService.getUser();
-    this.user = `${getUser.firstName} ${getUser.lastName}`;
+    if (getUser) {
+      this.user = `${getUser.firstName} ${getUser.lastName}`;
+    }
   }
-
-
 
   logOut() {
     this.loginService.logOut();
