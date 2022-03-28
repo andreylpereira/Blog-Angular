@@ -11,9 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ArticlesComponent } from './home/articles/articles.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CategoryArticlesComponent } from './category-articles/category-articles.component';
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, AboutComponent, CategoriesComponent, ArticlesComponent],
+  declarations: [LoginComponent, HomeComponent, AboutComponent, CategoriesComponent, ArticlesComponent, CategoryArticlesComponent],
   exports: [LoginComponent],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule, SharedModule, ControlPanelModule, NgxPaginationModule]
 })

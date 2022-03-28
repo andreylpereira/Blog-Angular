@@ -31,8 +31,8 @@ export class ArticlesService {
     return this.http.get<Article>(`${this.url}/categories/${_id}/article`);
   }
 
-  getArticlesByCategory() {
-    return this.http.get<Article[]>(`${this.url}/categories/:id/articles`);
+  getArticlesByCategoryId(_id: any) {
+    return this.http.get<Article[]>(`${this.url}/categories/${_id}/articles`);
   }
 
   createArticle(article: Article) {
