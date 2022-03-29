@@ -1,27 +1,46 @@
-# BlogApp
+# Blog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
+### Sobre o projeto:
+- Blog genérico utilizando API TinyMCE de edição de texto;
+- Paginas públicas e paginas restritas para administrador, onde possibilita gerenciar(CRUD) categorias e artigos;
+- Possibilidade do usuário visualizar somente artigos de categoria selecionada;
 
-## Development server
+### Front-end:
+- Angular 13+;
+- Bootstrap 4;
+- TinyMCE;
+- Ngx-pagination;
+- Ngx-toastr;
+- auth0;
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Back-end:
+- nodejs;
+- mySQL;
+- repositório: https://github.com/andreylpereira/blogAPI
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Home
+![home](https://user-images.githubusercontent.com/62312260/160631471-592d3f38-fd69-4605-afab-ff66c5448cb3.jpg)
 
-## Build
+### Listagem de artigos por categoria
+![por-categoria](https://user-images.githubusercontent.com/62312260/160631622-db109949-9acd-45da-8954-28ff23f767db.jpg)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Sobre
+![sobre](https://user-images.githubusercontent.com/62312260/160631582-f6caeb8d-3526-4325-8f8d-c8a3768784ba.jpg)
 
-## Running unit tests
+### Cadastro de Admin/autor
+![cadastro-usuario](https://user-images.githubusercontent.com/62312260/160631552-7b6ad630-73c7-4172-bfe9-0987c348679c.jpg)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Login
+![login](https://user-images.githubusercontent.com/62312260/160631674-8063a286-6e11-4513-8a32-acd63a4e2d0e.jpg)
 
-## Running end-to-end tests
+### Painel de controle
+![painel-controle](https://user-images.githubusercontent.com/62312260/160631725-c3fb5d57-e73a-4ba1-8307-2123ba093fd4.jpg)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Criar/Editar - Artigos
+![criar-edit-artigo](https://user-images.githubusercontent.com/62312260/160631795-406171db-ca2b-4fb5-a197-8bbff33fcc5c.jpg)
 
-## Further help
+### Criar/Editar - Categorias
+![criar-editar-categoria](https://user-images.githubusercontent.com/62312260/160632265-d7915b10-b697-40f6-95cf-ca39a7541465.jpg)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
