@@ -3,8 +3,6 @@
   <div class="card-body">
     <h1 class="card-title mt-0"><b>Cadastro de usuário</b></h1>
     <div class="card-text">
-
-
       <div>
         <form [formGroup]="registerForm">
           <div class="form-group">
@@ -17,7 +15,15 @@
               formControlName="email"
               placeholder="Digite seu email"
             />
-            <small class="form-text text-danger" *ngIf="(registerForm.get('email')?.hasError('required') || registerForm.get('email')?.hasError('email')) && registerForm.controls['email']?.touched"><b>* Favor digitar um e-mail válido!</b></small>
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                (registerForm.get('email')?.hasError('required') ||
+                  registerForm.get('email')?.hasError('email')) &&
+                registerForm.controls['email']?.touched
+              "
+              ><b>* Favor digitar um e-mail válido!</b></small
+            >
             <br />
             <label for="firstName">Nome*</label>
             <input
@@ -27,8 +33,15 @@
               formControlName="firstName"
               placeholder="Digite sua senha"
             />
-            <small class="form-text text-danger" *ngIf="registerForm.get('firstName')?.hasError('required') && registerForm.controls['firstName']?.touched"><b>* Favor digitar o seu nome!</b></small>
-            <br>
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                registerForm.get('firstName')?.hasError('required') &&
+                registerForm.controls['firstName']?.touched
+              "
+              ><b>* Favor digitar o seu nome!</b></small
+            >
+            <br />
             <label for="lastName">Sobrenome*</label>
             <input
               type="text"
@@ -38,7 +51,14 @@
               formControlName="lastName"
               placeholder="Digite seu sobrenome"
             />
-            <small class="form-text text-danger" *ngIf="registerForm.get('lastName')?.hasError('required') && registerForm.controls['lastName']?.touched"><b>* Favor digitar o seu sobrenome!</b></small>
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                registerForm.get('lastName')?.hasError('required') &&
+                registerForm.controls['lastName']?.touched
+              "
+              ><b>* Favor digitar o seu sobrenome!</b></small
+            >
             <br />
             <label for="password">Senha*</label>
             <input
@@ -48,7 +68,14 @@
               formControlName="password"
               placeholder="Digite sua senha"
             />
-            <small class="form-text text-danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.controls['password']?.touched"><b>* Campo senha obrigatório!</b></small>
+            <small
+              class="form-text text-danger"
+              *ngIf="
+                registerForm.get('password')?.hasError('required') &&
+                registerForm.controls['password']?.touched
+              "
+              ><b>* Campo senha obrigatório!</b></small
+            >
           </div>
         </form>
         <button

@@ -2,17 +2,24 @@
   <div class="card-body">
     <h5 class="card-title mt-0"><b>Categorias</b></h5>
     <div class="card-text">
+      <p class="m-1" style="cursor: pointer" (click)="goToHome()"><b >Todos</b></p>
       <div *ngIf="categories | async as category">
         <div
+          style="cursor: pointer"
           *ngFor="
             let c of category
               | paginate
                 : { id: 'categoryPagination', itemsPerPage: 10, currentPage: c }
           "
         >
-          <p class="m-1">{{ c.title }}</p>
+          <p class="m-1" (click)="goToCategoryArticles(c.id)">{{ c.title }}</p>
         </div>
-        <br>
+        <div *ngIf="category?.length === undefined">
+          <p>
+            <b><i>Não há nenhuma categoria para ser listada!</i></b>
+          </p>
+        </div>
+        <br />
         <pagination-controls
           id="categoryPagination"
           class="w-100"

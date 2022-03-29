@@ -12,8 +12,22 @@ html, body {
 body { margin: 0; font-family: 'Montserrat', "Helvetica Neue", sans-serif; }
 
 
-.btn {
+.btn-default {
   font-size: 13px;
   font-weight: bold;
-  border-radius: 15px
+  border-radius: 15px;
+  background: linear-gradient(0deg, rgba(139,40,207,1) 0%, rgba(173,73,242,1) 34%);
+  color: $primary-color;
+  border-color: $tertiary-color;
+}
+
+.btn-default:hover {
+  color: $primary-color;
+  background: linear-gradient(0deg, rgba(173,73,242,1) 0%, rgba(139,40,207,1) 34%);
+  border-color: $quaternary-color;
+}
+
+.btn-default:focus,
+.btn-default.focus {
+  box-shadow: 0 0 0 .2rem $tertiary-color;
 }

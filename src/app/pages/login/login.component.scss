@@ -9,18 +9,18 @@
   margin: 0 !important;
 }
 
-.btn {
-  background-color: $tertiary-color;
-  color: $primary-color;
-}
-
 #user-icon {
   fill: $tertiary-color;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 901px) {
   .card {
     max-width: 25%
+  }
+}
+@media (min-width: 577px) and (max-width: 900px) {
+  .card {
+    max-width: 50%
   }
 }
 
