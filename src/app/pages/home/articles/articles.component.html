@@ -2,13 +2,28 @@
   <div class="card-body">
     <h1 class="card-title mt-0"><b>Seja bem-vindo!</b></h1>
     <div class="card-text">
+      <hr>
       <div *ngIf="articles | async as article">
         <div
           *ngFor="
             let a of article | paginate: { id: 'articlePagination', itemsPerPage: 5, currentPage: a }
           "
         >
-          <p>{{ a.title }}</p>
+      <div class="card text-left w-100">
+        <div class="card-body">
+          <h3 class="card-title"><b>{{ a.title }}</b></h3>
+          <p class="mb-0"><b>Por: {{ a.author }}</b></p>
+          <p class="mb-0" style="font-size: 10px;"><i>Publicado em {{ a.createdAt | date:'dd/MM/yyyy HH:mm' }}h</i></p>
+          <div *ngIf="a.createdAt != a.updatedAt"><p style="font-size: 10px;"><i>Atualizado em {{ a.updatedAt | date:'dd/MM/yyyy HH:mm' }}h</i></p></div>
+          <hr>
+          <div class="body">
+            <div class="card-text" [innerHtml]="a.body | safeHtml">
+          </div>
+        </div>
+        <button type="button" class="btn btn-default" (click)="goToDetailArticle(a.slug)">VER MAIS</button>
+        </div>
+      </div>
+      <hr>
         </div>
         <br>
         <pagination-controls

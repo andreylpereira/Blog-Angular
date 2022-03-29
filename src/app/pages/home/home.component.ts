@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+/* Models */
 import Article from 'src/app/models/articles.model';
 import Category from 'src/app/models/category.model';
+/* Services */
 import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
-import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,6 @@ export class HomeComponent implements OnInit {
     this.getCategories();
     this.getArticles();
   }
-
 
   getCategories() {
     this.categories$ = this.categoriesService.getCategories();

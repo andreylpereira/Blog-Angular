@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+/* Service */
 import { LoginService } from 'src/app/services/login/login.service';
+/* Model */
 import Category from '../../models/category.model';
 
 @Injectable({

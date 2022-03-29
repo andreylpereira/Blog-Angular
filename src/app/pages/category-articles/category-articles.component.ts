@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
+/* Models */
 import Article from 'src/app/models/articles.model';
 import Category from 'src/app/models/category.model';
+/* Services */
 import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 

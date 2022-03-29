@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+/* Model */
 import Article from 'src/app/models/articles.model';
+/* Service */
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Injectable({
@@ -33,6 +35,10 @@ export class ArticlesService {
 
   getArticlesByCategoryId(_id: any) {
     return this.http.get<Article[]>(`${this.url}/categories/${_id}/articles`);
+  }
+
+  getArticleBySlug(_slug: string) {
+    return this.http.get<Article>(`${this.url}/${_slug}`);
   }
 
   createArticle(article: Article) {

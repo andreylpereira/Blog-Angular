@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+/* Service */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
@@ -38,9 +38,6 @@ export class FormCategoriesComponent implements OnInit {
     if (this.categoryForm.valid) {
       this.categoriesService.createCategory(category)
       this.categoryForm.reset();
-    } else {
-      console.log('error');
-
     }
   }
 
@@ -53,9 +50,6 @@ export class FormCategoriesComponent implements OnInit {
     if (this.categoryForm.valid) {
       this.categoriesService.updateCategory(category)
       this.categoryForm.reset();
-    } else {
-      console.log('error');
-
     }
   }
 }

@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+/* Model */
 import Category from 'src/app/models/category.model';
+/* Service */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
-import { Output, EventEmitter } from '@angular/core';
-
 
 @Component({
   selector: 'app-list-categories',

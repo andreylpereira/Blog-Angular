@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 /* Model */
 import Login from '../../models/login.model';
-/* Services */
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
