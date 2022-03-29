@@ -3,7 +3,7 @@
     <h1 class="card-title mt-0"><b>Seja bem-vindo!</b></h1>
     <div class="card-text">
       <hr>
-      <div *ngIf="articles | async as article">
+      <div *ngIf="articles | async as article;">
         <div
           *ngFor="
             let a of article | paginate: { id: 'articlePagination', itemsPerPage: 5, currentPage: a }
