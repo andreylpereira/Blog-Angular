@@ -13,7 +13,6 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class ArticlesService {
   readonly url;
-  private options: any;
 
   constructor(
     private http: HttpClient,
@@ -22,7 +21,7 @@ export class ArticlesService {
     private toastr: ToastrService
   ) {
     this.url = 'http://localhost:8080';
-    this.options = this.loginService.options();
+
   }
 
   getArticles(): Observable<Article[]> {
@@ -43,7 +42,7 @@ export class ArticlesService {
 
   createArticle(article: Article) {
     return this.http
-      .post<Article>(`${this.url}/admin/articles/save`, article, this.options)
+      .post<Article>(`${this.url}/admin/articles/save`, article)
       .subscribe({
         next: (res: any) => {
           this.router.navigate(['/admin/control-panel']);
@@ -61,7 +60,7 @@ export class ArticlesService {
 
   updateArticle(article: Article) {
     return this.http
-      .put<Article>(`${this.url}/admin/articles/update`, article, this.options)
+      .put<Article>(`${this.url}/admin/articles/update`, article)
       .subscribe({
         next: (res: any) => {
           this.router.navigate(['/admin/control-panel']);
@@ -79,7 +78,7 @@ export class ArticlesService {
 
   deleteArticle(_id: string) {
     return this.http
-      .delete<any>(`${this.url}/admin/articles/${_id}/delete`, this.options)
+      .delete<any>(`${this.url}/admin/articles/${_id}/delete`)
       .subscribe({
         next: (res: any) => {
           this.toastr.success(res.message, res.title, {

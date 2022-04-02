@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-/* Service */
-import { LoginService } from 'src/app/services/login/login.service';
 /* Model */
 import Category from '../../models/category.model';
 
@@ -13,16 +11,13 @@ import Category from '../../models/category.model';
 })
 export class CategoriesService {
   readonly url;
-  private options: any;
 
   constructor(
     private http: HttpClient,
-    private loginService: LoginService,
     private router: Router,
     private toastr: ToastrService
   ) {
     this.url = 'http://localhost:8080';
-    this.options = this.loginService.options();
   }
 
   getCategories(): Observable<Category[]> {
@@ -34,8 +29,7 @@ export class CategoriesService {
     return this.http
       .post<Category>(
         `${this.url}/admin/categories/save`,
-        category,
-        this.options
+        category
       )
       .subscribe({
         next: (res: any) => {
@@ -56,8 +50,7 @@ export class CategoriesService {
     return this.http
       .put<Category>(
         `${this.url}/admin/categories/update`,
-        category,
-        this.options
+        category
       )
       .subscribe({
         next: (res: any) => {
@@ -76,7 +69,7 @@ export class CategoriesService {
 
   deleteCategory(_id: string) {
     return this.http
-      .delete<any>(`${this.url}/admin/categories/${_id}/delete`, this.options)
+      .delete<any>(`${this.url}/admin/categories/${_id}/delete`)
       .subscribe({
         next: (res: any) => {
           this.toastr.success(res.message, res.title, {
