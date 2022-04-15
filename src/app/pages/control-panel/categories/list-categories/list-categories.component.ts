@@ -19,7 +19,7 @@ export class ListCategoriesComponent implements OnInit {
     private router: Router,
     private categoriesService: CategoriesService
   ) {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
   @Output() updateCategory = new EventEmitter<number>();
 
@@ -37,5 +37,4 @@ export class ListCategoriesComponent implements OnInit {
     this.categoriesService.deleteCategory(_id);
     location.reload();
   }
-
 }

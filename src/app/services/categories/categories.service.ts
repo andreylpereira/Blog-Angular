@@ -24,13 +24,9 @@ export class CategoriesService {
     return this.http.get<Category[]>(`${this.url}/categories`);
   }
 
-
   createCategory(category: Category) {
     return this.http
-      .post<Category>(
-        `${this.url}/admin/categories/save`,
-        category
-      )
+      .post<Category>(`${this.url}/admin/categories/save`, category)
       .subscribe({
         next: (res: any) => {
           this.router.navigate(['/admin/control-panel']);
@@ -42,16 +38,13 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        }
+        },
       });
   }
 
   updateCategory(category: Category) {
     return this.http
-      .put<Category>(
-        `${this.url}/admin/categories/update`,
-        category
-      )
+      .put<Category>(`${this.url}/admin/categories/update`, category)
       .subscribe({
         next: (res: any) => {
           this.router.navigate(['/admin/control-panel']);
@@ -63,7 +56,7 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        }
+        },
       });
   }
 
@@ -80,7 +73,7 @@ export class CategoriesService {
           this.toastr.error(err.error.message, err.error.title, {
             timeOut: 2000,
           });
-        }
+        },
       });
   }
 }
