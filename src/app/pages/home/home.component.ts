@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-/* Models */
-import Article from 'src/app/models/articles.model';
-import Category from 'src/app/models/category.model';
 /* Services */
 import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
+/* Store */
+import { Store } from '@ngrx/store';
+import { retrievedArticleList } from 'src/app/_store/articles/article.actions';
+import { retrievedCategoryList } from 'src/app/_store/category/category.actions';
+import { selectArticles } from './../../_store/articles/article.selectors';
+import { selectCategories } from 'src/app/_store/category/category.selectors';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +16,10 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
 })
 export class HomeComponent implements OnInit {
 
-  articles$!: Observable<Article[]>;
-  categories$!: Observable<Category[]>;
+  articles$ = this.store.select(selectArticles);
+  categories$ = this.store.select(selectCategories);
 
-  constructor(private categoriesService: CategoriesService, private articlesService: ArticlesService) {}
+  constructor(private categoriesService: CategoriesService, private articlesService: ArticlesService, private store: Store) {}
 
   ngOnInit(): void {
     this.getCategories();
@@ -25,11 +27,13 @@ export class HomeComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories$ = this.categoriesService.getCategories();
+   this.categoriesService.getCategories()
+      .subscribe((categories) => this.store.dispatch(retrievedCategoryList({ categories })));
   }
 
   getArticles() {
-    this.articles$ = this.articlesService.getArticles();
+    this.articlesService.getArticles()
+    .subscribe((articles) => this.store.dispatch(retrievedArticleList({ articles })));
   }
 
 }
