@@ -1,5 +1,8 @@
 @import '../../../assets/scss/variables.scss';
 
+body {
+  background-color: transparent !important;
+}
 .main {
   width: 100vw;
   height: 100vh;

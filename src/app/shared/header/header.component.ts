@@ -29,4 +29,8 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.loginService.logOut();
   }
+
+  toggle() {
+    const theme = document.body.classList.toggle('dark-theme');
+  }
 }
