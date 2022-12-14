@@ -1,43 +1,45 @@
 <app-header></app-header>
-<div class="card shadow mt-5 mb-5 mr-1 ml-1">
-  <div class="card-body">
-    <div class="card-text">
-      <div>
+<main class="d-flex justify-content-center align-items-center">
+  <div class="card shadow mr-1 ml-1 w-75">
+    <div class="card-body">
+      <div class="card-text">
         <div>
-          <div class="card text-left">
-            <div class="card-body">
-              <h3 class="card-title">
-                <b>{{ article.title }}</b>
-              </h3>
-              <p class="mb-0">
-                <b>Por: {{ article.author }}</b>
-              </p>
-              <p class="mb-0" style="font-size: 10px">
-                <i
-                  >Publicado em
-                  {{ article.createdAt | date: "dd/MM/yyyy HH:mm" }}h</i
-                >
-              </p>
-              <div *ngIf="article.createdAt != article.updatedAt">
-                <p style="font-size: 10px">
+          <div>
+            <div class="card text-left">
+              <div class="card-body">
+                <h3 class="card-title">
+                  <b>{{ article.title }}</b>
+                </h3>
+                <p class="mb-0">
+                  <b>Por: {{ article.author }}</b>
+                </p>
+                <p class="mb-0" style="font-size: 10px">
                   <i
-                    >Atualizado em
-                    {{ article.updatedAt | date: "dd/MM/yyyy HH:mm" }}h</i
+                    >Publicado em
+                    {{ article.createdAt | date : "dd/MM/yyyy HH:mm" }}h</i
                   >
                 </p>
+                <div *ngIf="article.createdAt != article.updatedAt">
+                  <p style="font-size: 10px">
+                    <i
+                      >Atualizado em
+                      {{ article.updatedAt | date : "dd/MM/yyyy HH:mm" }}h</i
+                    >
+                  </p>
+                </div>
+                <hr />
+                <div class="body">
+                  <div
+                    class="card-text"
+                    [innerHtml]="article.body | safeHtml"
+                  ></div>
+                </div>
+                <hr />
               </div>
-              <hr />
-              <div class="body">
-                <div
-                  class="card-text"
-                  [innerHtml]="article.body | safeHtml"
-                ></div>
-              </div>
-              <hr />
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</main>

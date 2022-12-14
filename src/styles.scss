@@ -28,7 +28,7 @@ main {
 .btn-default:hover {
   color: $primary-color;
   background: linear-gradient(0deg, $tertiary-color 0%, $quaternary-color 34%);
-  border-color: $quaternary-color;
+  opacity: 0.85;
 }
 
 .btn-default:focus,
